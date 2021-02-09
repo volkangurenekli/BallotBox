@@ -1,5 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import Table from "../../components/Table";
+import Select from "antd/lib/select";
+import Divider from "antd/lib/divider";
+
+const { Option } = Select;
 
 const Home = ({ candidates, set }) => {
   const [sortCategory, setSortCategory] = useState("");
@@ -50,15 +54,24 @@ const Home = ({ candidates, set }) => {
   };
 
   return (
-    <section>
-      <button onClick={() => setSortCategory("numberOfVotes")}>numberOfVotes</button>
-      <hr />
-      <button onClick={() => setSortCategory("-numberOfVotes")}>-numberOfVotes</button>
-      <hr />
-      <button onClick={() => setSortCategory("-lastVote")}>-lastVote</button>
+    <Fragment>
+      <img className="icon" src="assets/sort.svg" alt="sort" />
+
+      <Select labelInValue style={{ width: 250 }} onChange={(value) => setSortCategory(value)} defaultValue={{ value: "-numberOfVotes" }}>
+        <Option value="-fullName">Full Name Descend</Option>
+        <Option value="fullName">Full Name Ascend</Option>
+        <Option value="-numberOfVotes">Number Of Votes Descend</Option>
+        <Option value="+numberOfVotes">Number Of Votes Ascend</Option>
+        <Option value="-lastVote">Last Vote Descend</Option>
+        <Option value="lastVote">Last Vote Ascend</Option>
+        <Option value="-creationDate">Creation Date Descend</Option>
+        <Option value="creationDate">Creation Date Ascend</Option>
+      </Select>
+
+      <Divider>TABLE OF CANDIDATES</Divider>
 
       <Table dataSource={dataSource} vote={vote} remove={remove} />
-    </section>
+    </Fragment>
   );
 };
 

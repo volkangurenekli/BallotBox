@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 
 const Add = ({ candidates, set }) => {
   const [name, setName] = useState("");
@@ -24,7 +24,7 @@ const Add = ({ candidates, set }) => {
   };
 
   return (
-    <section>
+    <Fragment>
       <div>
         fullName -
         <input type="text" value={name} onChange={(e) => _onChange(e)} required />
@@ -42,7 +42,7 @@ const Add = ({ candidates, set }) => {
       </div>
       <hr />
       <button onClick={() => add()}>ADD</button>
-    </section>
+    </Fragment>
   );
 };
 

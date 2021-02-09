@@ -1,7 +1,9 @@
 import React from "react";
+import Layout from "antd/lib/layout";
+const { Footer } = Layout;
 
-const Footer = () => {
-  return <footer>Footer</footer>;
+const AppFooter = () => {
+  return <Footer>Footer</Footer>;
 };
 
-export default Footer;
+export default AppFooter;

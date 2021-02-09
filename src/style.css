@@ -1,0 +1,26 @@
+.ant-layout-content {
+  padding-top: 5rem;
+}
+
+.icon {
+  width: 50px;
+  height: auto;
+  cursor: pointer;
+}
+
+.ant-table-row:hover {
+  cursor: pointer;
+}
+
+.ant-table-row .remove {
+  visibility: hidden;
+}
+
+.ant-table-row:hover .remove {
+  visibility: visible;
+}
+
+table tr,
+th {
+  padding: 0.5rem !important;
+}

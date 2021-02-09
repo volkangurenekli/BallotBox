@@ -1,0 +1,18 @@
+header a {
+  margin: 0 10%;
+}
+
+header span {
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.ant-layout-header {
+  height: 70px !important;
+  padding: 0 2rem !important;
+  line-height: 70px !important;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
