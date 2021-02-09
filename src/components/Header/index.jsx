@@ -1,13 +1,13 @@
 import React from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
-import Layout from "antd/lib/layout";
-import Popover from "antd/lib/popover";
+import { Layout, Popover } from "antd";
+
 const { Header } = Layout;
 
 const AppHeader = () => {
   return (
-    <Header className="site-layout-background">
+    <Header>
       <span>BALLOT BOX</span>
       <Link to="/">
         <Popover content="LIST" trigger="hover">

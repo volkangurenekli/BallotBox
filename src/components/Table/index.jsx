@@ -1,5 +1,6 @@
 import React from "react";
-import Table from "antd/lib/table";
+import { Table } from "antd";
+import "./style.css";
 
 const AppTable = ({ dataSource, vote, remove }) => {
   const columns = [

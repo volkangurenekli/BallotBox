@@ -1,7 +1,6 @@
 import React, { useState, useEffect, Fragment } from "react";
 import Table from "../../components/Table";
-import Select from "antd/lib/select";
-import Divider from "antd/lib/divider";
+import { Select, Divider } from "antd";
 
 const { Option } = Select;
 
