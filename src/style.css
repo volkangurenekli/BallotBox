@@ -7,3 +7,7 @@
   height: auto;
   cursor: pointer;
 }
+
+.ant-layout {
+  min-height: 100vh !important;
+}

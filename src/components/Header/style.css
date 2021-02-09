@@ -1,11 +1,14 @@
 header a {
-  margin: 0 10%;
+  margin: 0 8%;
 }
 
 header span {
   color: white;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: bold;
+  position: fixed;
+  top: 0;
+  right: 1rem;
 }
 
 .ant-layout-header {

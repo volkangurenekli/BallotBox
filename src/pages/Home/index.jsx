@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Fragment } from "react";
 import Table from "../../components/Table";
 import { Select, Divider } from "antd";
-
+import "./style.css";
 const { Option } = Select;
 
 const Home = ({ candidates, set }) => {
@@ -21,6 +21,7 @@ const Home = ({ candidates, set }) => {
       return newArray.push(item);
     });
     setDataSource(newArray);
+    console.log("VOLKAN ~ newArray", newArray);
   }, [sortCategory, voted, removed]);
 
   const vote = (index, value) => {
@@ -56,7 +57,7 @@ const Home = ({ candidates, set }) => {
     <Fragment>
       <img className="icon" src="assets/sort.svg" alt="sort" />
 
-      <Select labelInValue style={{ width: 250 }} onChange={(value) => setSortCategory(value)} defaultValue={{ value: "-numberOfVotes" }}>
+      <Select defaultValue={{ value: "-numberOfVotes" }} labelInValue onChange={(value) => setSortCategory(value)}>
         <Option value="-fullName">Full Name Descend</Option>
         <Option value="fullName">Full Name Ascend</Option>
         <Option value="-numberOfVotes">Number Of Votes Descend</Option>

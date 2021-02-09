@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Form, Input, Button, DatePicker, InputNumber, Row, Col } from "antd";
+import { Form, Input, Button, DatePicker, InputNumber, Row, Col, notification } from "antd";
+import "./style.css";
 
 const Add = ({ candidates, set }) => {
   const [name, setName] = useState("");
@@ -17,6 +18,10 @@ const Add = ({ candidates, set }) => {
       };
       set([...candidates, candidate]);
       setName("");
+      notification.open({
+        message: "Notification",
+        description: "Candidate Upload Successfully Added.",
+      });
     }
   };
 

@@ -32,7 +32,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <Layout style={{ minHeight: "100vh" }}>
+      <Layout>
         <Header />
         <Content>
           <Row>

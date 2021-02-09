@@ -10,13 +10,13 @@ const AppHeader = () => {
     <Header>
       <span>BALLOT BOX</span>
       <Link to="/">
-        <Popover content="LIST" trigger="hover">
+        <Popover placement="right" content="LIST" trigger="hover">
           <img className="icon" src="assets/list.svg" alt="list" />
         </Popover>
       </Link>
 
       <Link to="/add">
-        <Popover content="ADD" trigger="hover">
+        <Popover placement="right" content="ADD" trigger="hover">
           <img className="icon" src="assets/add.svg" alt="add" />
         </Popover>
       </Link>

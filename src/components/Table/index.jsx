@@ -1,8 +1,17 @@
 import React from "react";
-import { Table } from "antd";
+import { Table, Popconfirm, message } from "antd";
 import "./style.css";
 
 const AppTable = ({ dataSource, vote, remove }) => {
+  function confirm(index) {
+    remove(index);
+    message.success("Candidate Removed!");
+  }
+
+  function cancel() {
+    message.error("Candidate Not Removed");
+  }
+
   const columns = [
     {
       title: "Name",
@@ -39,19 +48,15 @@ const AppTable = ({ dataSource, vote, remove }) => {
     {
       title: "Delete",
       dataIndex: "",
-      render: (text, record, index) => <img className="icon remove" src="assets/remove.svg" alt="remove" onClick={() => remove(index)}></img>,
+      render: (text, record, index) => (
+        <Popconfirm title="Are you sure to delete this candidate?" onConfirm={() => confirm(index)} onCancel={() => cancel()} okText="Remove" cancelText="No">
+          <img className="icon remove" src="assets/remove.svg" alt="remove"></img>
+        </Popconfirm>
+      ),
     },
   ];
 
-  return (
-    <Table
-      columns={columns}
-      dataSource={dataSource}
-      pagination={{ defaultPageSize: 5, showSizeChanger: true, pageSizeOptions: ["5", "10", "50"] }}
-      rowKey={(record) => record.creationDate}
-      scroll={{ x: 1200, y: 400 }}
-    />
-  );
+  return <Table columns={columns} dataSource={dataSource} pagination={{ defaultPageSize: 5 }} rowKey={(record) => record.creationDate} scroll={{ x: 1200, y: 400 }} />;
 };
 
 export default AppTable;
