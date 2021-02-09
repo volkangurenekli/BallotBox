@@ -1,5 +1,12 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { render } from "react-dom";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
+import "antd/dist/antd.css";
 
-ReactDOM.render(<App />, document.getElementById("react"));
+render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById("react")
+);
