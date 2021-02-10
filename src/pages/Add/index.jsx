@@ -11,12 +11,13 @@ const Add = ({ candidates, set }) => {
       setError(true);
     } else {
       let candidate = {
+        id: Date.parse(new Date()),
         fullName: name,
         numberOfVotes: 0,
         creationDate: new Date(),
         lastVote: new Date(),
       };
-      set([...candidates, candidate]);
+      candidates && candidates.length > 0 ? set([...candidates, candidate]) : set([candidate]);
       setName("");
       notification.open({
         message: "Notification",
